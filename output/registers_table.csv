@@ -1,0 +1,12 @@
+Name,Name in List,Abbreviation,Offset,R/W restrictions,RO subfields,WO subfields,RW subfields,Page
+Device Control Register,CTRL,CTRL,0x00000,Read/Write,NA,NA,2-31,543
+Extended Device Control Register,CTRL_EXT,CTRL_EXT,0x00018,Read/Write,NA,NA,2-31,544
+Extended Interrupt Cause Register,EICR,EICR,0x00800,Read/Write One to Clear,NA,NA,31:0,572
+Extended Interrupt Mask Set/Read Register,EIMS,EIMS,0x00880,Read/Write Set,NA,NA,31:0,573
+Filter Control Register,FCTRL,FCTRL,0x05080,Read/Write,NA,NA,1-10,582
+MAC Core Control 0 Register,HLREG0,HLREG0,0x04240,Read/Write,NA,NA,0-31,666
+Interrupt Vector Allocation,IVAR,IVAR,0x00900,Read/Write,NA,NA,0-31,578
+Receive DMA Control Register,RDRXCTL,RDRXCTL,0x02F00,Read/Write,NA,NA,1-31,599
+Receive Descriptor Tail,RDT,RDT,0x01018 & 0x0D018,Read/Write,NA,NA,0-31,597
+Receive Control Register,RXCTRL,RXCTRL,0x03000,Read/Write,NA,NA,0,600
+Transmit Descriptor Control,TXDCTL,TXDCTL,0x06028 & 0x40*n,Read/Write,NA,NA,0-31,606

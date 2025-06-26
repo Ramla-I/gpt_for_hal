@@ -1,0 +1,3 @@
+from .extract_section_headers_ixgbe import extract_section_headers
+from .divide_datasheet_into_sections_ixgbe import divide_datasheet_into_sections
+from .divide_datasheet_into_sections_e1000 import split_datasheet_sections

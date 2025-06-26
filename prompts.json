@@ -1,0 +1,88 @@
+{
+    "type": "prompt",
+    "prompt_name": "extract_regs_from_driver",
+    "function_name": "",
+    "input": ["driver"],
+    "output": "list of registers, one on each line",
+    "saved_output": "reg_list_pre"
+}
+{
+    "type": "process",
+    "prompt_name": "",
+    "function_name": "post_process_reg_list",
+    "input": ["reg_list_pre"],
+    "output": "cleaned up reg list without duplicates and standard prefixes like 'REG_'",
+    "saved_output": "reg_list"
+}
+{
+    "type": "prompt",
+    "prompt_name": "extract_table_data",
+    "function_name": "",
+    "input": ["reg_list", "datasheet"],
+    "output": "table of register information in csv format",
+    "saved_output": "reg_table_pre.csv"
+}
+{
+    "type": "process",
+    "prompt_name": "",
+    "function_name": "post_process_reg_table",
+    "input": ["reg_table_pre.csv"],
+    "output": "cleaned up reg table",
+    "saved_output": "reg_table.csv"
+}
+{
+    "type": "prompt",
+    "prompt_name": "extract_enum_info",
+    "function_name": "",
+    "input": ["{reg_name}", "datasheet"],
+    "output": "JSON entry of enum information per register",
+    "saved_output": "{reg_abbreviation}_enum_info.csv"
+}
+{
+    "type": "prompt",
+    "prompt_name": "script_to_divide_datasheet_by_sections",
+    "function_name": "",
+    "input": ["datasheet"],
+    "output": "python script which divides a datasheet",
+    "saved_output": "divide_datasheet_into_sections.py"
+}
+{
+    "type": "process",
+    "prompt_name": "",
+    "function_name": "split_datasheet_into_sections",
+    "input": ["datasheet"],
+    "output": "array of datasheet sections",
+    "saved_output": "sections/{i}"
+}
+{
+    "type": "prompt",
+    "prompt_name": "identify_inter_register_dependencies",
+    "function_name": "",
+    "input": ["section"],
+    "output": "JSON output of dependency information",
+    "saved_output": "dependency_information"
+}
+{
+    "type": "prompt",
+    "prompt_name": "categorize_dependencies",
+    "function_name": "",
+    "input": ["dependency_information"],
+    "output": "JSON output of dependency information",
+    "saved_output": "categorized_dependencies"
+}
+{
+    "type": "process",
+    "prompt_name": "",
+    "function_name": "remove_hw_dependencies",
+    "input": ["categorized_dependencies"],
+    "output": "JSON output of SW dependency information",
+    "saved_output": "categorized_dependencies_sw"
+}
+{
+    "type": "prompt",
+    "prompt_name": "lt_dependencies",
+    "function_name": "",
+    "input": ["categorized_dependencies_sw"],
+    "output": "JSON output of dependency information with LT information",
+    "saved_output": "lt_dependencies"
+}

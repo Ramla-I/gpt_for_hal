@@ -1,0 +1,148 @@
+Dependee Register,Dependent Register,Input Line,Matched Line,Match Type
+CTRL,RDH,The only time that software should write to this register is after a reset (hardware reset or CTRL.SWRST) and before enabling the receive function (RCTL.EN).,NOT FOUND,none
+RDH,RCTL,The only time that software should write to this register is after a reset (hardware reset or CTRL.SWRST) and before enabling the receive function (RCTL.EN).,NOT FOUND,none
+FEXTNVM,FEXTNVM,"When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM).",NOT FOUND,none
+FEXTNVM,FEXTNVM,"When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM).",NOT FOUND,none
+FEXTNVM,FEXTNVM,"When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM).",NOT FOUND,none
+FEXTNVM,FEXTNVM,"When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM).",NOT FOUND,none
+FEXTNVM,FEXTNVM,"When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM).",NOT FOUND,none
+FEXTNVM,FEXTNVM,"When set to '0', the 100msec MDIO watchdog timer is enabled.",NOT FOUND,none
+FEXTNVM,FEXTNVM,When set it disables assertion of bb_clkgaten due to D3hot. Default NVM setting is '0'.,NOT FOUND,none
+FEXTNVM,FEXTNVM,"When set to '1', legacy flow managed by BIOS routine should be performed to disable the Lan.",NOT FOUND,none
+FEXTNVM,EXTCNF_CTRL,"The software should initialize the LCD using the ""Extended Configuration"" image in the NVM only when both the ""SW LCD Config Enable"" bit is set and the ""LCD Write Enable"" bit in the EXTCNF CTRL register is cleared.",NOT FOUND,none
+FEXTNVM,FEXTNVM,"Enables assertion of ""gbe_pmcmsus_powerdown_rdy_mosc"" in WoL enabled configuration.",NOT FOUND,none
+FEXTNVM,FEXTNVM,"Enables assertion of ""gbe_pmcmsus_powerdown_rdy_mosc"" in D3/DMoff/no_wake configuration.",NOT FOUND,none
+FEXT,FEXT,HW SW CRC mismatch trigger when set to 1 the LC generates a trigger signal whenever there is a mismatch between the software calculated CRC and the hardware calculated CRC.,NOT FOUND,none
+FEXT,FEXT,Write disable Ghost and DMA RAMS on CRC mismatch when set to 1: disable any writes to the following rams in the event of CRC mismatch until reset:,NOT FOUND,none
+FEXT,FEXT,FEXT.10 must be set to 1.,"Visibility in/out read data select (1 = in)
+11 RW 0
+FEXT.10 must be set to 1.",partial
+FEXT,FEXT,FEXT.10 must be set to 1,"Visibility in/out read data select (1 = in)
+11 RW 0
+FEXT.10 must be set to 1.",partial
+PBA,CTRL,The software must reset both transmit and receive operation (using the global device reset CTRL.SWRST bit) after changing this register in order for it to take effect.,NOT FOUND,none
+PBS,CTRL,The software must reset both transmit and receive operation (using the global device reset CTRL.SWRST bit) after changing this register in order for it to take effect.,NOT FOUND,none
+PBECCSTS,PBECCSTS,"When Stop on first Error (SOFE) bit is set to 1, when there is ECC failure, the LFA register will capture the failing address of the failure",NOT FOUND,none
+PBECCINJ,PBECCINJ,Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0).,NOT FOUND,none
+PBECCINJ,PBECCINJ,Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0).,NOT FOUND,none
+PBECCINJ,PBECCINJ,Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0).,NOT FOUND,none
+PBECCINJ,PBECCINJ,Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0).,NOT FOUND,none
+PBECCINJ,PBECCINJ,When set to 0 the addresses for ECC injection from this register will be ignored,NOT FOUND,none
+PBECCINJ,PBECCINJ,When set to 0 the addresses for ECC injection from this register will be ignored,NOT FOUND,none
+PBECCINJ,PBECCINJ,When set to 0 the addresses for ECC injection from this register will be ignored,NOT FOUND,none
+PBECCINJ,PBECCINJ,When set to 0 the addresses for ECC injection from this register will be ignored,NOT FOUND,none
+ICR,ICR,If the Interrupt is enabled in the PCI configuration space an Interrupt is asserted.,NOT FOUND,none
+CTRL_EXT,IMS,"When the CTRL_EXT.INT_TIMERS_CLEAR_ENA bit is set, then following writing all 1's to the IMS register (enable all Interrupts) all interrupt timers are cleared to their initial value.",NOT FOUND,none
+RCTL,RCTL,Hardware discards long packets if LPE is 0.,NOT FOUND,none
+RCTL,RCTL,"If LPE is 1, the maximum packet size that the device can receive is 9018 bytes.",NOT FOUND,none
+RCTL,RCTL,0- Buffer size is as defined in BSIZE,NOT FOUND,none
+RCTL,RCTL,1 Original BSIZE values are multiplied by 16.,NOT FOUND,none
+RCTL,RCTL,"When this field is ""0000"", the buffer size is determined by BSIZE.",NOT FOUND,none
+RCTL,RCTL,The Packet Checksum will not include the Ethernet CRC if the RCTL.SECRC bit is set.,NOT FOUND,none
+RCTL1,RCTL,The value of RCTL1.DTYP should be the same as RCTL.DTYP (same descriptor types used in both descriptor queues).,NOT FOUND,none
+RCTL1,RCTL1,0 Buffer size is as defined in BSIZE,NOT FOUND,none
+RCTL1,RCTL1,1- Original BSIZE values are multiplied by 16.,NOT FOUND,none
+RCTL1,RCTL1,"When this field is ""0000"", the buffer size is determined by BSIZE.",NOT FOUND,none
+ERT,ERT,"When SW activates the ""Early Receive"" mechanism (by setting the RxThreshold field to a non-zero value) it must set this bit as well.",NOT FOUND,none
+ERT,ERT,"If the size of a given packet is smaller than the threshold value, or if this register is set to 0, then LAN Controller will start the PCI transfer only after the entire packet is contained in LAN Controller's receive packet buffer.",NOT FOUND,none
+PSRCTL,PSRCTL,"If SW sets a buffer size to zero, all buffers following that one must be set to zero as well.",NOT FOUND,none
+PSRCTL,PSRCTL,"If SW sets a buffer size to zero, all buffers following that one must be set to zero as well.",NOT FOUND,none
+PSRCTL,PSRCTL,"If SW sets a buffer size to zero, all buffers following that one must be set to zero as well.",NOT FOUND,none
+FCRTL,FCRTL,Software must set XONE to enable the transmission of XON frames.,Software must set XONE to enable the transmission of XON frames.,exact
+RDBAL,RDBAL,The Receive Descriptor Base Address must point to a 16B aligned block of data.,NOT FOUND,none
+RDLEN,RDLEN,The descriptor ring must be equal to or larger then 8 descriptors.,"82579 GbE PHY—Intel® 6 Series Express Chipset MAC Programming Interface
+Note: The descriptor ring must be equal to or larger then 8 descriptors.",partial
+RDTR,RDTR,"Writing this register with FPD set initiates an immediate expiration of the timer, causing a write back of any consumed receive descriptors pending write back, and results in a receive timer interrupt in the ICR.",NOT FOUND,none
+RXDCTL,RXDCTL,"If GRAN=0 (specifications are in cache- line granularity), the thresholds specified (based on the cache line size specified in the PCI configuration space CLS field) must not represent greater than 31 descriptors.",NOT FOUND,none
+RXDCTL,RXDCTL,"If GRAN=0 (specifications are in cache- line granularity), the thresholds specified (based on the cache line size specified in the PCI configuration space CLS field) must not represent greater than 31 descriptors.",NOT FOUND,none
+RXDCTL,RXDCTL,"If GRAN=0 (specifications are in cache- line granularity), the thresholds specified (based on the cache line size specified in the PCI configuration space CLS field) must not represent greater than 31 descriptors.",NOT FOUND,none
+RXDCTL,RXDCTL,GRAN = 1 (descriptor granularity): PTHRESH = 0...31,NOT FOUND,none
+RXDCTL,RXDCTL,GRAN = 1 (descriptor granularity): WTHRESH = 0...31,NOT FOUND,none
+RXDCTL,RXDCTL,GRAN = 1 (descriptor granularity): HTHRESH = 0...31,NOT FOUND,none
+RXDCTL,RXDCTL,When (WTHRESH = 0) or (WTHRESH = 1 and GRAN=1 only descriptors with the 'RS' bit set will be written back.,NOT FOUND,none
+RXDCTL,RXDCTL,When (WTHRESH = 0) or (WTHRESH = 1 and GRAN=1 only descriptors with the 'RS' bit set will be written back.,NOT FOUND,none
+RXCSUM,RXCSUM,"If RXCSUM.IPPCSE cleared (the default value), the checksum calculation that is reported in the Rx Packet checksum field is the unadjusted ""16 bit ones complement"" of the packet.",NOT FOUND,none
+RXCSUM,RXCSUM,The PCSS value should not exceed a pointer to IP header start or else it will erroneously calculate IP header checksum or TCP/UDP checksum.,NOT FOUND,none
+MRQC,RXDCTL,RXDCTL1 is only accessible when VMDq is enabled (MRQC.MRxQueue =10).,NOT FOUND,none
+TCTL,TCTL,Writing this bit to 0 will stop transmission after any in progress packets are sent.,NOT FOUND,none
+TCTL,TCTL,This bit is ignored in full-duplex mode.,This bit is ignored in full-duplex mode.,exact
+TDBAL,TDBAL,The Transmit Descriptor Base Address must point to a 16B aligned block of data.,NOT FOUND,none
+TDLEN,TDLEN,The descriptor ring must be equal to or larger than 8 descriptors.,Note: The descriptor ring must be equal to or larger than 8 descriptors.,partial
+TIDV,TIDV,"Writing this register with FPD set initiates an immediate expiration of the timer, causing a write back of any consumed transmit descriptors pending write back, and results in a transmit timer interrupt in the ICR.",NOT FOUND,none
+TXDCTL,TXDCTL,PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes),"Possible values:
+GRAN = 1 (descriptor granularity):
+PTHRESH = 0..31
+WTHRESH = 0..31
+HTHRESH = 0..31
+GRAN = 0 (cacheline granularity):
+PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)
+WTHRESH = 0..3
+HTHRESH = 0..4
+Note: For any WTHRESH value other than 0 - The packet and absolute timers must get a non
+zero value for the WTHRESH feature to take affect.",partial
+TXDCTL,TXDCTL,WTHRESH = 0..3,"Possible values:
+GRAN = 1 (descriptor granularity):
+PTHRESH = 0..31
+WTHRESH = 0..31
+HTHRESH = 0..31
+GRAN = 0 (cacheline granularity):
+PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)
+WTHRESH = 0..3
+HTHRESH = 0..4
+Note: For any WTHRESH value other than 0 - The packet and absolute timers must get a non
+zero value for the WTHRESH feature to take affect.",partial
+TXDCTL,TXDCTL,HTHRESH = 0..4,"Possible values:
+GRAN = 1 (descriptor granularity):
+PTHRESH = 0..31
+WTHRESH = 0..31
+HTHRESH = 0..31
+GRAN = 0 (cacheline granularity):
+PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)
+WTHRESH = 0..3
+HTHRESH = 0..4
+Note: For any WTHRESH value other than 0 - The packet and absolute timers must get a non
+zero value for the WTHRESH feature to take affect.",partial
+TXDCTL,TXDCTL,PTHRESH = 0..31,"Possible values:
+GRAN = 1 (descriptor granularity):
+PTHRESH = 0..31
+WTHRESH = 0..31
+HTHRESH = 0..31
+GRAN = 0 (cacheline granularity):
+PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)
+WTHRESH = 0..3
+HTHRESH = 0..4
+Note: For any WTHRESH value other than 0 - The packet and absolute timers must get a non
+zero value for the WTHRESH feature to take affect.",partial
+TXDCTL,TXDCTL,WTHRESH = 0..31,"Possible values:
+GRAN = 1 (descriptor granularity):
+PTHRESH = 0..31
+WTHRESH = 0..31
+HTHRESH = 0..31
+GRAN = 0 (cacheline granularity):
+PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)
+WTHRESH = 0..3
+HTHRESH = 0..4
+Note: For any WTHRESH value other than 0 - The packet and absolute timers must get a non
+zero value for the WTHRESH feature to take affect.",partial
+TXDCTL,TXDCTL,HTHRESH = 0..31,"Possible values:
+GRAN = 1 (descriptor granularity):
+PTHRESH = 0..31
+WTHRESH = 0..31
+HTHRESH = 0..31
+GRAN = 0 (cacheline granularity):
+PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)
+WTHRESH = 0..3
+HTHRESH = 0..4
+Note: For any WTHRESH value other than 0 - The packet and absolute timers must get a non
+zero value for the WTHRESH feature to take affect.",partial
+TXDCTL,TXDCTL,"Since the default value for write-back threshold is 0, descriptors are normally written back as soon as they are processed.",NOT FOUND,none
+TDFH,PBA,The initial value equals PBA. RXA times 128..,NOT FOUND,none
+TDFT,PBA,The initial value equals PBA. RXA times 128.,NOT FOUND,none
+TDFHS,PBA,The initial value equals PBA. RXA times 128.,NOT FOUND,none
+TDFTS,PBA,The initial value equals PBA. RXA times 128.,NOT FOUND,none
+LSECTXCTRL,LSECTXUT,"The ""Tx Untagged Packet"" register is not incremented for transmitted packets when the ""Enable Tx MACsec"" equals 00b.",NOT FOUND,none
+LSECTXCTRL,LSECTXPN0,"In order to guarantee this, the HW clears the ""Enable Tx MACsec"" field in the LSECTXCTRL register to 00b once a packet is transmitted with a PN that equals to 0xFF...F0.",NOT FOUND,none
+LSECTXCTRL,LSECTXPN1,"In order to guarantee this, the HW clears the ""Enable Tx MACsec"" field in the LSECTXCTRL register to 00b once a packet is transmitted with a PN that equals to 0xFF...F0.",NOT FOUND,none
+LSECRXCTRL,LSECRXUNCH,"Number of packets received with MACsec encapsulation (SecTag) while ValidateFrames is disabled (LSECRXCTRL bits 3:2 equal 00b).""",NOT FOUND,none
+LSECRXCTRL,LSECRXDELAY,Number of packets received and accepted for validation having failed replay-protection and ReplayProtect is false (LSECRXCTRL bit 7 is zero).,NOT FOUND,none
+LSECRXCTRL,LSECRXLATE,Number of packets received and accepted for validation having failed replay-protection and ReplayProtect is true (LSECRXCTRL bit 7 is '1').,NOT FOUND,none

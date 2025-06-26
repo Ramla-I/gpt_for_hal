@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"TDH","subfields":[{"bit_range":"15:0","subfield_name_abbreviation":"TDH","valid_values":[{"name":"Transmit Descriptor Head","value":"0"}]}]}

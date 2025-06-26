@@ -1,0 +1,1234 @@
+{
+    "dependencies": [
+      {
+        "dependee_register": {
+          "register_name": "CTRL",
+          "subfield_name_abbreviation": "SWRST",
+          "bit_range": "26",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RDH",
+          "subfield_name_abbreviation": "RDH",
+          "bit_range": "15:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The only time that software should write to this register is after a reset (hardware reset or CTRL.SWRST) and before enabling the receive function (RCTL.EN)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RDH",
+          "subfield_name_abbreviation": "RDH",
+          "bit_range": "15:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "EN",
+          "bit_range": "1",
+          "value": "1"
+        },
+        "relevant_sentence": "The only time that software should write to this register is after a reset (hardware reset or CTRL.SWRST) and before enabling the receive function (RCTL.EN)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "dma_clk_enable_d",
+          "bit_range": "1",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "dma_clk_enable_d",
+          "bit_range": "1",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "wake_dma_clk_enable_d",
+          "bit_range": "2",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "wake_dma_clk_enable_d",
+          "bit_range": "2",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "gpt_clk_enable_d",
+          "bit_range": "3",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "gpt_clk_enable_d",
+          "bit_range": "3",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "mac_clk_enable_d",
+          "bit_range": "4",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "mac_clk_enable_d",
+          "bit_range": "4",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "m2k_clk_enable_d",
+          "bit_range": "5",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "m2k_clk_enable_d",
+          "bit_range": "5",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this bit is set to 1, clk is always ticking, default value is '0' (HW and NVM)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Enable MDIO Watchdog Timer",
+          "bit_range": "10",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Enable MDIO Watchdog Timer",
+          "bit_range": "10",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When set to '0', the 100msec MDIO watchdog timer is enabled."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Disable CLK gate Enable Due to D3hot",
+          "bit_range": "20",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Disable CLK gate Enable Due to D3hot",
+          "bit_range": "20",
+          "value": "0"
+        },
+        "relevant_sentence": "When set it disables assertion of bb_clkgaten due to D3hot. Default NVM setting is '0'."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "LAN Disable Mode",
+          "bit_range": "21",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "LAN Disable Mode",
+          "bit_range": "21",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When set to '1', legacy flow managed by BIOS routine should be performed to disable the Lan."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "SW LCD Config Enable",
+          "bit_range": "27",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "EXTCNF_CTRL",
+          "subfield_name_abbreviation": "LCD Write Enable",
+          "bit_range": "0",
+          "value": "0"
+        },
+        "relevant_sentence": "The software should initialize the LCD using the \"Extended Configuration\" image in the NVM only when both the \"SW LCD Config Enable\" bit is set and the \"LCD Write Enable\" bit in the EXTCNF CTRL register is cleared."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Enables assertion of \"gbe_pmcmsus_powerdown_rdy_mosc\" in WoL enabled configuration.",
+          "bit_range": "30",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Enables assertion of \"gbe_pmcmsus_powerdown_rdy_mosc\" in WoL enabled configuration.",
+          "bit_range": "30",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Enables assertion of \"gbe_pmcmsus_powerdown_rdy_mosc\" in WoL enabled configuration."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Enables assertion of \"gbe_pmcmsus_powerdown_rdy_mosc\" in D3/DMoff/no_wake configuration.",
+          "bit_range": "31",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "FEXTNVM",
+          "subfield_name_abbreviation": "Enables assertion of \"gbe_pmcmsus_powerdown_rdy_mosc\" in D3/DMoff/no_wake configuration.",
+          "bit_range": "31",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Enables assertion of \"gbe_pmcmsus_powerdown_rdy_mosc\" in D3/DMoff/no_wake configuration."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "HW SW CRC mismatch trigger",
+          "bit_range": "8",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "HW SW CRC mismatch trigger",
+          "bit_range": "8",
+          "value": "N/A"
+        },
+        "relevant_sentence": "HW SW CRC mismatch trigger when set to 1 the LC generates a trigger signal whenever there is a mismatch between the software calculated CRC and the hardware calculated CRC."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "Write disable Ghost and DMA RAMS on CRC mismatch",
+          "bit_range": "9",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "Write disable Ghost and DMA RAMS on CRC mismatch",
+          "bit_range": "9",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Write disable Ghost and DMA RAMS on CRC mismatch when set to 1: disable any writes to the following rams in the event of CRC mismatch until reset:"
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "Enables the data visibility of the Ghost read PCI descriptor and PCI data RAMs to the NOA.",
+          "bit_range": "10",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "Visibility in/out read data select",
+          "bit_range": "11",
+          "value": "N/A"
+        },
+        "relevant_sentence": "FEXT.10 must be set to 1."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "Enables the data visibility of the Ghost read PCI descriptor and PCI data RAMs to the NOA.",
+          "bit_range": "10",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "FEXT",
+          "subfield_name_abbreviation": "Visibility data/desc read ram select",
+          "bit_range": "12",
+          "value": "N/A"
+        },
+        "relevant_sentence": "FEXT.10 must be set to 1"
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBA",
+          "subfield_name_abbreviation": "RXA",
+          "bit_range": "4:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "CTRL",
+          "subfield_name_abbreviation": "SWRST",
+          "bit_range": "26",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The software must reset both transmit and receive operation (using the global device reset CTRL.SWRST bit) after changing this register in order for it to take effect."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBS",
+          "subfield_name_abbreviation": "RXA",
+          "bit_range": "4:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "CTRL",
+          "subfield_name_abbreviation": "SWRST",
+          "bit_range": "26",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The software must reset both transmit and receive operation (using the global device reset CTRL.SWRST bit) after changing this register in order for it to take effect."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCSTS",
+          "subfield_name_abbreviation": "Stop on first Error",
+          "bit_range": "17",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "PBECCSTS",
+          "subfield_name_abbreviation": "Last failure address",
+          "bit_range": "31:20",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When Stop on first Error (SOFE) bit is set to 1, when there is ECC failure, the LFA register will capture the failing address of the failure"
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on TX Buffer on header line",
+          "bit_range": "0",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on TX Buffer on header line",
+          "bit_range": "0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on TX Buffer on data line",
+          "bit_range": "1",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on TX Buffer on data line",
+          "bit_range": "1",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on RX Buffer on header line",
+          "bit_range": "2",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on RX Buffer on header line",
+          "bit_range": "2",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on RX Buffer on data line",
+          "bit_range": "3",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on RX Buffer on data line",
+          "bit_range": "3",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Auto cleared by HW when error is injected if PBECCINJ.ENECCADD is clear (0)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Enable ECC injection to address",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on TX Buffer on header line",
+          "bit_range": "0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When set to 0 the addresses for ECC injection from this register will be ignored"
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Enable ECC injection to address",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on TX Buffer on data line",
+          "bit_range": "1",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When set to 0 the addresses for ECC injection from this register will be ignored"
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Enable ECC injection to address",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on RX Buffer on header line",
+          "bit_range": "2",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When set to 0 the addresses for ECC injection from this register will be ignored"
+      },
+      {
+        "dependee_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Enable ECC injection to address",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PBECCINJ",
+          "subfield_name_abbreviation": "Inject an error on RX Buffer on data line",
+          "bit_range": "3",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When set to 0 the addresses for ECC injection from this register will be ignored"
+      },
+      {
+        "dependee_register": {
+          "register_name": "ICR",
+          "subfield_name_abbreviation": "INT_ASSERTED",
+          "bit_range": "31",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "ICR",
+          "subfield_name_abbreviation": "INT_ASSERTED",
+          "bit_range": "31",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If the Interrupt is enabled in the PCI configuration space an Interrupt is asserted."
+      },
+      {
+        "dependee_register": {
+          "register_name": "CTRL_EXT",
+          "subfield_name_abbreviation": "INT_TIMERS_CLEAR_ENA",
+          "bit_range": "29",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "IMS",
+          "subfield_name_abbreviation": "N/A",
+          "bit_range": "0-31",
+          "value": "all 1s"
+        },
+        "relevant_sentence": "When the CTRL_EXT.INT_TIMERS_CLEAR_ENA bit is set, then following writing all 1's to the IMS register (enable all Interrupts) all interrupt timers are cleared to their initial value."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "LPE",
+          "bit_range": "5",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "LPE",
+          "bit_range": "5",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Hardware discards long packets if LPE is 0."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "LPE",
+          "bit_range": "5",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "LPE",
+          "bit_range": "5",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If LPE is 1, the maximum packet size that the device can receive is 9018 bytes."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "BSEX",
+          "bit_range": "25",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "BSIZE",
+          "bit_range": "17:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "0- Buffer size is as defined in BSIZE"
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "BSEX",
+          "bit_range": "25",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "BSIZE",
+          "bit_range": "17:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "1 Original BSIZE values are multiplied by 16."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "FLXBUF",
+          "bit_range": "30:27",
+          "value": "0000"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "BSIZE",
+          "bit_range": "17:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this field is \"0000\", the buffer size is determined by BSIZE."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "SECRC",
+          "bit_range": "26",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "SECRC",
+          "bit_range": "26",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The Packet Checksum will not include the Ethernet CRC if the RCTL.SECRC bit is set."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "DTYP",
+          "bit_range": "11:10",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "RCTL",
+          "subfield_name_abbreviation": "DTYP",
+          "bit_range": "11:10",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The value of RCTL1.DTYP should be the same as RCTL.DTYP (same descriptor types used in both descriptor queues)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "BSEX",
+          "bit_range": "25",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "BSIZE",
+          "bit_range": "17:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "0 Buffer size is as defined in BSIZE"
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "BSEX",
+          "bit_range": "25",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "BSIZE",
+          "bit_range": "17:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "1- Original BSIZE values are multiplied by 16."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "FLXBUF",
+          "bit_range": "30:27",
+          "value": "0000"
+        },
+        "dependent_register": {
+          "register_name": "RCTL1",
+          "subfield_name_abbreviation": "BSIZE",
+          "bit_range": "17:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When this field is \"0000\", the buffer size is determined by BSIZE."
+      },
+      {
+        "dependee_register": {
+          "register_name": "ERT",
+          "subfield_name_abbreviation": "RxThreshold",
+          "bit_range": "12:0",
+          "value": "non-zero"
+        },
+        "dependent_register": {
+          "register_name": "ERT",
+          "subfield_name_abbreviation": "Reserved",
+          "bit_range": "13",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When SW activates the \"Early Receive\" mechanism (by setting the RxThreshold field to a non-zero value) it must set this bit as well."
+      },
+      {
+        "dependee_register": {
+          "register_name": "ERT",
+          "subfield_name_abbreviation": "RxThreshold",
+          "bit_range": "12:0",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "ERT",
+          "subfield_name_abbreviation": "RxThreshold",
+          "bit_range": "12:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If the size of a given packet is smaller than the threshold value, or if this register is set to 0, then LAN Controller will start the PCI transfer only after the entire packet is contained in LAN Controller's receive packet buffer."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PSRCTL",
+          "subfield_name_abbreviation": "BSIZEO",
+          "bit_range": "6:0",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PSRCTL",
+          "subfield_name_abbreviation": "BSIZE1",
+          "bit_range": "13:8",
+          "value": "0"
+        },
+        "relevant_sentence": "If SW sets a buffer size to zero, all buffers following that one must be set to zero as well."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PSRCTL",
+          "subfield_name_abbreviation": "BSIZE1",
+          "bit_range": "13:8",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PSRCTL",
+          "subfield_name_abbreviation": "BSIZE2",
+          "bit_range": "21:16",
+          "value": "0"
+        },
+        "relevant_sentence": "If SW sets a buffer size to zero, all buffers following that one must be set to zero as well."
+      },
+      {
+        "dependee_register": {
+          "register_name": "PSRCTL",
+          "subfield_name_abbreviation": "BSIZE2",
+          "bit_range": "21:16",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "PSRCTL",
+          "subfield_name_abbreviation": "BSIZE3",
+          "bit_range": "29:24",
+          "value": "0"
+        },
+        "relevant_sentence": "If SW sets a buffer size to zero, all buffers following that one must be set to zero as well."
+      },
+      {
+        "dependee_register": {
+          "register_name": "FCRTL",
+          "subfield_name_abbreviation": "XONE",
+          "bit_range": "31",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "FCRTL",
+          "subfield_name_abbreviation": "XONE",
+          "bit_range": "31",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Software must set XONE to enable the transmission of XON frames."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RDBAL",
+          "subfield_name_abbreviation": "RDBAL",
+          "bit_range": "31:4",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "RDBAL",
+          "subfield_name_abbreviation": "RDBAL",
+          "bit_range": "31:4",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The Receive Descriptor Base Address must point to a 16B aligned block of data."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RDLEN",
+          "subfield_name_abbreviation": "LEN",
+          "bit_range": "19:7",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "RDLEN",
+          "subfield_name_abbreviation": "LEN",
+          "bit_range": "19:7",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The descriptor ring must be equal to or larger then 8 descriptors."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RDTR",
+          "subfield_name_abbreviation": "FPD",
+          "bit_range": "31",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RDTR",
+          "subfield_name_abbreviation": "Receive Delay Timer",
+          "bit_range": "15:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Writing this register with FPD set initiates an immediate expiration of the timer, causing a write back of any consumed receive descriptors pending write back, and results in a receive timer interrupt in the ICR."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "PTHRESH",
+          "bit_range": "5:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If GRAN=0 (specifications are in cache- line granularity), the thresholds specified (based on the cache line size specified in the PCI configuration space CLS field) must not represent greater than 31 descriptors."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If GRAN=0 (specifications are in cache- line granularity), the thresholds specified (based on the cache line size specified in the PCI configuration space CLS field) must not represent greater than 31 descriptors."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "HTHRESH",
+          "bit_range": "13:8",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If GRAN=0 (specifications are in cache- line granularity), the thresholds specified (based on the cache line size specified in the PCI configuration space CLS field) must not represent greater than 31 descriptors."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "PTHRESH",
+          "bit_range": "5:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "GRAN = 1 (descriptor granularity): PTHRESH = 0...31"
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "GRAN = 1 (descriptor granularity): WTHRESH = 0...31"
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "HTHRESH",
+          "bit_range": "13:8",
+          "value": "N/A"
+        },
+        "relevant_sentence": "GRAN = 1 (descriptor granularity): HTHRESH = 0...31"
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When (WTHRESH = 0) or (WTHRESH = 1 and GRAN=1 only descriptors with the 'RS' bit set will be written back."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "When (WTHRESH = 0) or (WTHRESH = 1 and GRAN=1 only descriptors with the 'RS' bit set will be written back."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXCSUM",
+          "subfield_name_abbreviation": "IPPCSE",
+          "bit_range": "12",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "RXCSUM",
+          "subfield_name_abbreviation": "IPPCSE",
+          "bit_range": "12",
+          "value": "N/A"
+        },
+        "relevant_sentence": "If RXCSUM.IPPCSE cleared (the default value), the checksum calculation that is reported in the Rx Packet checksum field is the unadjusted \"16 bit ones complement\" of the packet."
+      },
+      {
+        "dependee_register": {
+          "register_name": "RXCSUM",
+          "subfield_name_abbreviation": "IPPCSE",
+          "bit_range": "12",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "RXCSUM",
+          "subfield_name_abbreviation": "PCSS",
+          "bit_range": "7:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The PCSS value should not exceed a pointer to IP header start or else it will erroneously calculate IP header checksum or TCP/UDP checksum."
+      },
+      {
+        "dependee_register": {
+          "register_name": "MRQC",
+          "subfield_name_abbreviation": "MRxQueue",
+          "bit_range": "1:0",
+          "value": "10b"
+        },
+        "dependent_register": {
+          "register_name": "RXDCTL",
+          "subfield_name_abbreviation": "N/A",
+          "bit_range": "N/A",
+          "value": "N/A"
+        },
+        "relevant_sentence": "RXDCTL1 is only accessible when VMDq is enabled (MRQC.MRxQueue =10)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TCTL",
+          "subfield_name_abbreviation": "EN",
+          "bit_range": "1",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "TCTL",
+          "subfield_name_abbreviation": "EN",
+          "bit_range": "1",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Writing this bit to 0 will stop transmission after any in progress packets are sent."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TCTL",
+          "subfield_name_abbreviation": "RTLC",
+          "bit_range": "24",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "TCTL",
+          "subfield_name_abbreviation": "RTLC",
+          "bit_range": "24",
+          "value": "N/A"
+        },
+        "relevant_sentence": "This bit is ignored in full-duplex mode."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TDBAL",
+          "subfield_name_abbreviation": "TDBAL",
+          "bit_range": "31:4",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "TDBAL",
+          "subfield_name_abbreviation": "TDBAL",
+          "bit_range": "31:4",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The Transmit Descriptor Base Address must point to a 16B aligned block of data."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TDLEN",
+          "subfield_name_abbreviation": "LEN",
+          "bit_range": "19:7",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "TDLEN",
+          "subfield_name_abbreviation": "LEN",
+          "bit_range": "19:7",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The descriptor ring must be equal to or larger than 8 descriptors."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TIDV",
+          "subfield_name_abbreviation": "FPD",
+          "bit_range": "31",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "TIDV",
+          "subfield_name_abbreviation": "IDV",
+          "bit_range": "15:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Writing this register with FPD set initiates an immediate expiration of the timer, causing a write back of any consumed transmit descriptors pending write back, and results in a transmit timer interrupt in the ICR."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "PTHRESH",
+          "bit_range": "5:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "PTHRESH = 0..3 (for 16 descriptors cacheline - 256 bytes)"
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "WTHRESH = 0..3"
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "HTHRESH",
+          "bit_range": "13:8",
+          "value": "N/A"
+        },
+        "relevant_sentence": "HTHRESH = 0..4"
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "PTHRESH",
+          "bit_range": "5:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "PTHRESH = 0..31"
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "WTHRESH = 0..31"
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "GRAN",
+          "bit_range": "24",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "HTHRESH",
+          "bit_range": "13:8",
+          "value": "N/A"
+        },
+        "relevant_sentence": "HTHRESH = 0..31"
+      },
+      {
+        "dependee_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "TXDCTL",
+          "subfield_name_abbreviation": "WTHRESH",
+          "bit_range": "21:16",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Since the default value for write-back threshold is 0, descriptors are normally written back as soon as they are processed."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TDFH",
+          "subfield_name_abbreviation": "FIFO Head",
+          "bit_range": "12:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "PBA",
+          "subfield_name_abbreviation": "RXA",
+          "bit_range": "4:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The initial value equals PBA. RXA times 128.."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TDFT",
+          "subfield_name_abbreviation": "FIFO Tail",
+          "bit_range": "12:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "PBA",
+          "subfield_name_abbreviation": "RXA",
+          "bit_range": "4:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The initial value equals PBA. RXA times 128."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TDFHS",
+          "subfield_name_abbreviation": "FIFO Head",
+          "bit_range": "12:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "PBA",
+          "subfield_name_abbreviation": "RXA",
+          "bit_range": "4:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The initial value equals PBA. RXA times 128."
+      },
+      {
+        "dependee_register": {
+          "register_name": "TDFTS",
+          "subfield_name_abbreviation": "FIFO Tail",
+          "bit_range": "12:0",
+          "value": "N/A"
+        },
+        "dependent_register": {
+          "register_name": "PBA",
+          "subfield_name_abbreviation": "RXA",
+          "bit_range": "4:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The initial value equals PBA. RXA times 128."
+      },
+      {
+        "dependee_register": {
+          "register_name": "LSECTXCTRL",
+          "subfield_name_abbreviation": "Enable Tx MACsec",
+          "bit_range": "1:0",
+          "value": "00b"
+        },
+        "dependent_register": {
+          "register_name": "LSECTXUT",
+          "subfield_name_abbreviation": "Untagged Packet CNT",
+          "bit_range": "31:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "The \"Tx Untagged Packet\" register is not incremented for transmitted packets when the \"Enable Tx MACsec\" equals 00b."
+      },
+      {
+        "dependee_register": {
+          "register_name": "LSECTXCTRL",
+          "subfield_name_abbreviation": "Enable Tx MACsec",
+          "bit_range": "1:0",
+          "value": "00b"
+        },
+        "dependent_register": {
+          "register_name": "LSECTXPN0",
+          "subfield_name_abbreviation": "PN",
+          "bit_range": "31:0",
+          "value": "0xFF...F0"
+        },
+        "relevant_sentence": "In order to guarantee this, the HW clears the \"Enable Tx MACsec\" field in the LSECTXCTRL register to 00b once a packet is transmitted with a PN that equals to 0xFF...F0."
+      },
+      {
+        "dependee_register": {
+          "register_name": "LSECTXCTRL",
+          "subfield_name_abbreviation": "Enable Tx MACsec",
+          "bit_range": "1:0",
+          "value": "00b"
+        },
+        "dependent_register": {
+          "register_name": "LSECTXPN1",
+          "subfield_name_abbreviation": "PN",
+          "bit_range": "31:0",
+          "value": "0xFF...F0"
+        },
+        "relevant_sentence": "In order to guarantee this, the HW clears the \"Enable Tx MACsec\" field in the LSECTXCTRL register to 00b once a packet is transmitted with a PN that equals to 0xFF...F0."
+      },
+      {
+        "dependee_register": {
+          "register_name": "LSECRXCTRL",
+          "subfield_name_abbreviation": "ValidateFrames",
+          "bit_range": "3:2",
+          "value": "00b"
+        },
+        "dependent_register": {
+          "register_name": "LSECRXUNCH",
+          "subfield_name_abbreviation": "Unchecked Rx Packet CNT",
+          "bit_range": "31:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Number of packets received with MACsec encapsulation (SecTag) while ValidateFrames is disabled (LSECRXCTRL bits 3:2 equal 00b).\""
+      },
+      {
+        "dependee_register": {
+          "register_name": "LSECRXCTRL",
+          "subfield_name_abbreviation": "Replay Protect",
+          "bit_range": "7",
+          "value": "0"
+        },
+        "dependent_register": {
+          "register_name": "LSECRXDELAY",
+          "subfield_name_abbreviation": "Delayed Rx Packet CNT",
+          "bit_range": "31:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Number of packets received and accepted for validation having failed replay-protection and ReplayProtect is false (LSECRXCTRL bit 7 is zero)."
+      },
+      {
+        "dependee_register": {
+          "register_name": "LSECRXCTRL",
+          "subfield_name_abbreviation": "Replay Protect",
+          "bit_range": "7",
+          "value": "1"
+        },
+        "dependent_register": {
+          "register_name": "LSECRXLATE",
+          "subfield_name_abbreviation": "Late Rx Packet CNT",
+          "bit_range": "31:0",
+          "value": "N/A"
+        },
+        "relevant_sentence": "Number of packets received and accepted for validation having failed replay-protection and ReplayProtect is true (LSECRXCTRL bit 7 is '1')."
+      }
+    ]
+  }
