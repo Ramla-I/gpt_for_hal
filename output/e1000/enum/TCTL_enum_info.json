@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"TCTL","subfields":[{"bit_range":"30:29","subfield_name_abbreviation":"RRTHRESH","valid_values":[{"name":"twolines","value":"00b"},{"name":"fourlines","value":"01b"},{"name":"eightlines","value":"10b"},{"name":"nothreshold","value":"11b"}]}]}

@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"RXDCTL","subfields":[{"bit_range":"5:0","subfield_name_abbreviation":"PTHRESH","valid_values":[{"name":"0","value":"0..31"}]},{"bit_range":"13:8","subfield_name_abbreviation":"HTHRESH","valid_values":[{"name":"0","value":"0..31"}]},{"bit_range":"21:16","subfield_name_abbreviation":"WTHRESH","valid_values":[{"name":"0","value":"0..31"}]}]}

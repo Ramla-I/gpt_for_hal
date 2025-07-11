@@ -52,23 +52,23 @@ def main():
     datasheet = config.get_datasheet()
     driver = config.get_driver()
 
-    # Create output directory of driver_name/config.RUN/config.run_num. If it already exists, return an error.
-    output_dir = os.path.join(config.DRIVER_NAME, str(config.RUN_CATEGORY), str(config.RUN_NUM))
-    if os.path.exists(output_dir):
-        raise FileExistsError(f"Output directory '{output_dir}' already exists.")
-    else:
-        os.makedirs(output_dir)
+    # # Create output directory of driver_name/config.RUN/config.run_num. If it already exists, return an error.
+    # output_dir = os.path.join(config.DRIVER_NAME, str(config.RUN_CATEGORY), str(config.RUN_NUM))
+    # if os.path.exists(output_dir):
+    #     raise FileExistsError(f"Output directory '{output_dir}' already exists.")
+    # else:
+    #     os.makedirs(output_dir)
 
 
-    initial_inputs = {
-        "driver": config.get_driver(),
-        "datasheet": config.get_datasheet(),
-    }
+    # initial_inputs = {
+    #     "driver": config.get_driver(),
+    #     "datasheet": config.get_datasheet(),
+    # }
 
-    pipeline_runner.run_pipeline(output_dir, "prompts.json", initial_inputs)
+    # pipeline_runner.run_pipeline(output_dir, "prompts.json", initial_inputs)
 
-    # Increment RUN_NUM
-    config.RUN_NUM += 1
+    # # Increment RUN_NUM
+    # config.RUN_NUM += 1
 
     # # Extract the used registers from the existing driver.
     # driver = read_file(driver_path)
@@ -82,7 +82,7 @@ def main():
     # registers_table = call_openai_api([], prompt)
     # write_file("output/registers_table.csv", registers_table)
 
-    # reg_table = read_csv("output/registers_table.csv")
+    reg_table = read_csv("output/e1000/registers_table.csv")
 
     # remove any reg with offest set to NA
     # reg_table = [reg for reg in reg_table if reg["Offset"] != "NA"]
@@ -90,20 +90,20 @@ def main():
     # remove duplicate regs -> move to prompt
     # reg_table = [dict(t) for t in {tuple(d.items()) for d in reg_table}]
 
-    # # Now prompt GPT to find enums for each register.
-    # for reg in reg_table:
-    #     prompt = prompts.extract_enum_info(reg["Abbreviation"], datasheet)
-    #     messages = []
-    #     # add the new question
-    #     messages.append({ "role": "user", "content": prompt })
+    # Now prompt GPT to find enums for each register.
+    for reg in reg_table:
+        prompt = prompts.extract_enum_info(reg["Abbreviation"], datasheet)
+        messages = []
+        # add the new question
+        messages.append({ "role": "user", "content": prompt })
 
-    #     completion = client.beta.chat.completions.parse(
-    #         model="gpt-4o",
-    #         messages=messages,
-    #         response_format=prompts.RegisterInfo
-    #     )
-    #     enum_information = completion.choices[0].message.content
-    #     write_file(f"output/{reg['Abbreviation']}_enum_info.csv", enum_information)
+        completion = client.beta.chat.completions.parse(
+            model="gpt-4o",
+            messages=messages,
+            response_format=prompts.RegisterInfo
+        )
+        enum_information = completion.choices[0].message.content
+        write_file(f"output/{reg['Abbreviation']}_enum_info.json", enum_information)
     
     # Generate Read/Write masks for each register.
     # for reg in reg_table:

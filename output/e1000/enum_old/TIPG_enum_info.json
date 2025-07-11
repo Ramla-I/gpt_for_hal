@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"TIPG","subfields":[{"bit_range":"19:10","subfield_name_abbreviation":"IPGR1","valid_values":[{"name":"IPGR1 value","value":"8"}]},{"bit_range":"29:20","subfield_name_abbreviation":"IPGR2","valid_values":[{"name":"IPGR2 value","value":"9"}]}]}

@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"TDLEN","subfields":[{"bit_range":"19:7","subfield_name_abbreviation":"Descriptor Length","valid_values":[{"name":"none","value":"128B align"}]}]}

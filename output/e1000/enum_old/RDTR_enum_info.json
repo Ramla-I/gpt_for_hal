@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"RDTR","subfields":[{"bit_range":"15:0","subfield_name_abbreviation":"Receive Delay Timer","valid_values":[{"name":"immediate expiration","value":"0"}]},{"bit_range":"31","subfield_name_abbreviation":"Flush Partial Descriptor Block","valid_values":[{"name":"set","value":"1"}]}]}
