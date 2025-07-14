@@ -17,6 +17,10 @@ DATASHEET_PATHS = {
     "ixgbe": "datasheet/82599/pf_regs.pdf",
 }
 
+VECTOR_STORE_ID = {
+    "stm32f407": "vs_687140fd45ec8191810dbb64c4a2dfa0", #file-5gAhRQpG8wXBPgmEkGewac
+}
+
 def get_driver_path():
     return DRIVER_PATHS[DRIVER_NAME]
 

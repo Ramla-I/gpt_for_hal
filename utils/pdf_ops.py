@@ -102,7 +102,9 @@ def extract_text_from_pdf(pdf_path, page_start=None, page_end=None):
     return text
 
 def extract_markdown_from_pdf(pdf_path):
+    print(pdf_path)
     md_text = pymupdf4llm.to_markdown(pdf_path)
+    print(md_text)
     return md_text
 
 if __name__ == "__main__":

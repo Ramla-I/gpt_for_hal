@@ -7,3 +7,4 @@ from .script_to_extract_section_headers import script_to_extract_section_headers
 from .script_to_divide_datasheet_by_sections import script_to_divide_datasheet_by_sections
 from .categorize_dependencies import categorize_dependencies
 from .lt_dependencies import lt_dependencies, lt_dependency
+from .find_errors_in_svd import find_errors_in_svd, SVDError, SVDErrorValidated
