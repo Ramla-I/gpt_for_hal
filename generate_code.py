@@ -84,6 +84,10 @@ def parse_to_int(value: str) -> int | None:
     except Exception:
         return None
 
+def generate_dependencies():
+    dependencies = "extern crate volatile;\n"
+    dependencies += "use volatile::{Volatile, ReadOnly, WriteOnly};\n\n"
+    return dependencies
 
 def generate_struct_code(registers_list, register_struct_name="Registers"):
     """Generate Rust struct code based on the register summary and detailed info."""
@@ -127,12 +131,15 @@ def generate_accessor_methods(registers_list, register_struct_name="Registers"):
         read_mask = int(reg['RO mask']) | int(reg['RW mask'])
         write_mask = int(reg['WO mask']) | int(reg['RW mask'])
 
-        methods_code += f"    pub fn {snake_case(reg['Abbreviation'])}_read(&self) -> u32 {{\n"
-        methods_code += f"        self.{snake_case(reg['Abbreviation'])}.read() && 0x{read_mask:X} \n"
-        methods_code += "    }\n\n"
-        methods_code += f"    pub fn {snake_case(reg['Abbreviation'])}_write(&mut self, value: u32) {{\n"
-        methods_code += f"        self.{snake_case(reg['Abbreviation'])}.write(value && 0x{write_mask:X}) \n"
-        methods_code += "    }\n\n"
+        if reg["R/W restrictions"] == "RO" or reg["R/W restrictions"] == "RW":
+            methods_code += f"    pub fn {snake_case(reg['Abbreviation'])}_read(&self) -> u32 {{\n"
+            methods_code += f"        self.{snake_case(reg['Abbreviation'])}.read() & 0x{read_mask:X} \n"
+            methods_code += "    }\n\n"
+        
+        if reg["R/W restrictions"] == "WO" or reg["R/W restrictions"] == "RW":
+            methods_code += f"    pub fn {snake_case(reg['Abbreviation'])}_write(&mut self, value: u32) {{\n"
+            methods_code += f"        self.{snake_case(reg['Abbreviation'])}.write(value & 0x{write_mask:X}) \n"
+            methods_code += "    }\n\n"
 
     methods_code += "}\n"
     return methods_code
@@ -147,7 +154,10 @@ def generate_subfield_accessor_methods(enum_defs, enum_methods_code, reg_name, s
     """Generate Rust struct code based on the register summary and detailed info."""
     # print(subfields_list)
     for subfield in subfields_list:
-        enum_name = pascal_case(reg_name) + pascal_case(subfield['subfield_name_abbreviation'])
+        sf_abbr = subfield['subfield_name_abbreviation']
+        sf_type = subfield["type"]
+
+        enum_name = pascal_case(reg_name) + pascal_case(sf_abbr)
         enum_variants = []
         for v in subfield['valid_values']:
             # Each v is expected to be a dict with 'name' and 'value' keys
@@ -162,8 +172,12 @@ def generate_subfield_accessor_methods(enum_defs, enum_methods_code, reg_name, s
             enum_defs += f"    {pascal_case(variant[0])} = {variant[1]},\n"
         enum_defs += "}\n"
 
-        enum_methods_code += f"    pub fn {snake_case(reg_name)}_{snake_case(subfield['subfield_name_abbreviation'])}_write(&mut self, value: {enum_name}) {{\n"
-        enum_methods_code += f"        self.{snake_case(reg_name)}.write((self.{snake_case(reg_name)}.read() & !0x{sf_mask:X}) | ((value as u32) << {bitshift}))\n"
-        enum_methods_code += "    }\n\n"
+        if sf_type == "RO" or sf_type == "RW":
+            print("Warning: still need to generate read methods for enums")
+
+        if sf_type == "WO" or sf_type == "RW":
+            enum_methods_code += f"    pub fn {snake_case(reg_name)}_{snake_case(sf_abbr)}_write(&mut self, value: {enum_name}) {{\n"
+            enum_methods_code += f"        self.{snake_case(reg_name)}.write((self.{snake_case(reg_name)}.read() & !0x{sf_mask:X}) | ((value as u32) << {bitshift}))\n"
+            enum_methods_code += "    }\n\n"
 
     return enum_defs, enum_methods_code

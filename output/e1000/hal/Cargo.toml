@@ -1,0 +1,11 @@
+[package]
+name = "e1000_hal"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "e1000_hal"
+path = "src/registers_struct_human_checked.rs"
+
+[dependencies]
+volatile = "0.2.4"

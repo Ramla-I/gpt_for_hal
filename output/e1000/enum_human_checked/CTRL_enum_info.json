@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"CTRL","subfields":[{"bit_range":"9:8","type":"RW","subfield_name_abbreviation":"SPEED","valid_values":[{"name":"tenmbs","value":"00b"},{"name":"hundredmbs","value":"01b"},{"name":"thousandmbs","value":"10b"},{"name":"notused","value":"11b"}]}]}
