@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"RADV","subfields":[{"bit_range":"15:0","subfield_name_abbreviation":"Receive Absolute Delay Timer","valid_values":[{"name":"Disabled","value":"0"}]}]}

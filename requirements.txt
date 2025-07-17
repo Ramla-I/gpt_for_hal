@@ -1,0 +1,2 @@
+networkx>=2.8.0 # for graph generation
+matplotlib>=3.5.0 # for graph visualization

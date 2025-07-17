@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"RDLEN","subfields":[{"bit_range":"19:7","subfield_name_abbreviation":"Length","valid_values":[{"name":"Minimum","value":"0000000"},{"name":"Maximum","value":"10000000000"}]}]}

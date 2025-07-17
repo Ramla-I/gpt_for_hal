@@ -17,44 +17,19 @@ class RegisterInfo (BaseModel):
     subfields: list[SubfieldInfo]
 
 def extract_enum_info(register_name, datasheet):
-    """ Prompt for extracting data from the datasheet in JSON format """
+    """ Prompt for extracting data from the datasheet in CSV format """
 
     prompt = f"""
-        The given markdown text is from a datasheet: {datasheet}
-        It contains per-register tables with information about the register subfields.
-        Identify and extract the subfields for the register {register_name} that have write restrictions on them, meaning that only a subset of the values that fit in that range can be written to the field.
-        Output this information for the subfields matching the previous criteria:
-            1. The bit range of the subfield, found in the Bit column of the table. If it's missing, put a "NA".
-            2. The name abbreviation of the subfield, found in the Description column. If it's missing, put a "NA".
-            3. The valid values that can be written to the subfield, only include numeric values found in the Description column. Output this in the format "name of val1= number;name of val2=number;...". The name should only have alphabets.
-        Do not include any reserved subfields, read-only (RO) subfields, or subfields that have a range of 1 bit.
-        Do not create your own numbers to fit a description.
-        For example, the CTRL register has a subfield SPEED with write restrictions:
-        {{
-            "register_name": "CTRL",
-            "subfields":{{
-                "bit_range":"9:8",
-                "subfield_name_abbreviation": "SPEED",
-                "valid_values": [
-                    {{
-                        "name": "tenmbs",
-                        "value":"00b" 
-                    }},
-                    {{
-                        "name":"hundredmbs",
-                        "value":"01b" 
-                    }},
-                    {{
-                        "name":"thousandmbs",
-                        "value":"10b" 
-                    }},
-                    {{
-                        "name":"notused",
-                        "value":"11b" 
-                    }}
-                ]
-            }}
-        }}
+        The given PDF text is from a datasheet.
+        It contains a table that lists all the registers and their offsets.
+        It also contains a per-table register with information about the register subfields.
+        Identify and extract the following information for the register: {register_name}.
+        Do not include any reserved subfields, read-only (RO) subfields, or subfields that have a bit range with a length of 1, meaning there is no : in the Bit column.
+        For this register you must identify the following information: 
+            1. The bit range of each subfield, found in the Bit column of the table. If it's missing, put a "NA".
+            2. The name abbreviation of the subfields of the register, found in the Description column. If it's missing, put a "NA".
+            3. The valid values that can be written to each subfield, found in the Description column. Output this in the format "name of val1=val1;name of val2=val2;...". The name should be on the left of the equal sign and the numerical value on the right.
+        datasheet: {datasheet}
 
     """
 

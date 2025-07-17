@@ -1,0 +1,23 @@
+Name,Name in List,Abbreviation,Offset,R/W restrictions,RO subfields,WO subfields,RW subfields,Page
+Device Control Register,CTRL,CTRL,0x00000,RW,1 3-7 10 13-15 18-23 29,NA,0 2 8-9 11-12 16-17 24 26-28 30-31,145
+Receive Control Register,RCTRL,RCTL,0x00100,RW,0 18-21 24 31,NA,1-15 16-17 22-23 25-30,168 #set some reserved bits to read only even though listed as RW, missed bit 10 in RW, added 18-21 as RW when should be RO
+Device Status Register,STATUS,STATUS,0x00008,RO,0-8 11-31,NA,9-10,147 #missed many bits
+Interrupt Mask Set/Read Register,IMASK,IMS,0x000D0,RW,3 10-11 13 21 23-31,NA,0-2 4-9 12 14-20 22,166 #added some extra bits to RO, 
+Receive Descriptor Base Address Low,RXDESCLO,RDBAL,0x02800,RW,0-3,NA,4-31,173
+Receive Descriptor Base Address High,RXDESCHI,RDBAH,0x02804,RW,NA,NA,0-31,174
+Receive Descriptor Length,RXDESCLEN,RDLEN,0x02808,RW,0-6 20-31,NA,7-19,174
+Receive Descriptor Head,RXDESCHEAD,RDH,0x02810,RW,16-31,NA,0-15,175
+Receive Descriptor Tail,RXDESCTAIL,RDT,0x02818,RW,16-31,NA,0-15,175
+Transmit Control Register,TCTRL,TCTL,0x00400,RW,2 28 31,NA,0-1 3-27 29-30,185 #missed 23 in RW
+Transmit Descriptor Base Address Low,TXDESCLO,TDBAL,0x03800,RW,0-3,NA,4-31,187
+Transmit Descriptor Base Address High,TXDESCHI,TDBAH,0x03804,RW,NA,NA,0-31,188
+Transmit Descriptor Length,TXDESCLEN,TDLEN,0x03808,RW,0-6 20-31,NA,7-19,188
+Transmit Descriptor Head,TXDESCHEAD,TDH,0x03810,RW,16-31,NA,0-15,189
+Transmit Descriptor Tail,TXDESCTAIL,TDT,0x03818,RW,16-31,NA,0-15,189
+Interrupt Delay Timer (Packet Timer),RDTR,RDTR,0x02820,RW,16-30,31,0-15,175
+Receive Descriptor Control,RXDCTL,RXDCTL,0x02828,RW,6-7 22-23 25-31,NA,0-5 8-21 24,176
+Receive Interrupt Absolute Delay Timer,RADV,RADV,0x0282C,RW,16-31,NA,0-15,177
+Receive Small Packet Detect Interrupt,RSRPD,RSRPD,0x02C00,RW,12-31,NA,0-11,177
+Multicast Table Array,MTA,MTA,0x05200,RW,NA,NA,0-31,180
+CRC Error Count,CRCERRS,CRCERRS,0x04000,RO,0-31,NA,NA,193
+Transmit IPG Register,TIPG,TIPG,0x00410,RW,30-31,NA,0-29,186

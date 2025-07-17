@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"STATUS","subfields":[{"bit_range":"3,2","type":"RO","subfield_name_abbreviation":"PHYTYPE","valid_values":[{"name":"device00","value":"00"},{"name":"reserved01","value":"01"},{"name":"reserved10","value":"10"},{"name":"reserved11","value":"11"}]}]}

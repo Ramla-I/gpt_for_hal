@@ -1,0 +1,15 @@
+{
+  "register_name_abbreviation": "RDBAH",
+  "subfields": [
+    {
+      "bit_range": "31:0",
+      "subfield_name_abbreviation": "RDBAH",
+      "valid_values": [
+        {
+          "name": "Upper 32 bits of the 64 bit Descriptor base address",
+          "value": "X"
+        }
+      ]
+    }
+  ]
+}

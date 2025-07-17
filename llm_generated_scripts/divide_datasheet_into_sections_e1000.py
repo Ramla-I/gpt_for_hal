@@ -6,21 +6,36 @@ import pymupdf4llm
 def split_datasheet_sections(md_text):
     # Preprocess: Join split bold lines (multi-line headers)
     md_text = re.sub(r'\*\*(.*?)\*\*\s*\n\s*\*\*(.*?)\*\*', r'**\1 \2**', md_text)
-
-    # Match bolded lines starting with a number with multiple periods
-    header_pattern = re.compile(r'^\*\*(\d+(?:\.\d+){2,}.*?)\*\*', re.MULTILINE)
+    # print(md_text)
+    
+    # This regex matches headers like:
+    # **12.0.3.16.4** **MACsec RX Not using SA - LSECRXNUSA[n] (0x043C0 + 4*n (n=0…3); RC)**
+    header_pattern = re.compile(
+        # \*\* – Matches literal **
+        # (\d+(?:\.\d+)+) – Matches the section number like 10.5.5.5.5 (one or more dots)
+        # \*\* \*\* – Matches the ** ** separator between section number and name
+        # (.*?) – Lazily captures the section name
+        # - – Matches the literal dash between name and abbreviation
+        # (.*?) – Lazily captures the section abbreviation
+        # \((.+)\) – Captures everything inside the outermost parentheses (including nested ones)
+        # \*\* – Closing bold
+        r"\*\*(\d+(?:\.\d+)+)\*\* \*\*(.*?) - (.*?) \((.+)\)\*\*",
+        re.MULTILINE
+    )
 
     # Find all matches and their positions
     matches = list(header_pattern.finditer(md_text))
-    print(len(matches))
+
     # Slice the full text into sections using match positions
-    sections = []
+    sections = {}
     for i, match in enumerate(matches):
         start = match.start()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(md_text)
         section_text = md_text[start:end].strip()
-        sections.append(section_text)
-
+        section_number = match.group(1).strip()
+        section_header = match.group(2).strip()
+        section_abbreviation = match.group(3).strip()
+        sections[section_abbreviation] = section_text
     return sections
 
 # Example usage:

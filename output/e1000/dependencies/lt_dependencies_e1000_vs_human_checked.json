@@ -1,0 +1,154 @@
+[
+  {
+    "dependee_register": {
+      "register_name": "CTRL",
+      "subfield_name_abbreviation": "SU",
+      "bit_range": "X",
+      "value": "1"
+    },
+    "dependent_register": {
+      "register_name": "STATUS",
+      "subfield_name_abbreviation": "LU",
+      "bit_range": "1",
+      "value": "1"
+    },
+    "relevant_sentence": "For this to be valid, the Set Link Up bit of the Device Control Register (CTRL.SU) must be set.",
+    "dependency_category": "software",
+    "linear_type_enforceable": true,
+    "explanation": "This is an ordering dependency: STATUS.LU is only valid if CTRL.SU is set first, so a linear type could enforce that STATUS.LU can only be read after a function call that sets CTRL.SU.",
+    "notes": "CTRL.SU doesn't exist, datasheet error"
+  },
+  {
+    "dependee_register": {
+      "register_name": "CTRL",
+      "subfield_name_abbreviation": "SPEED",
+      "bit_range": "X",
+      "value": "Forced"
+    },
+    "dependent_register": {
+      "register_name": "STATUS",
+      "subfield_name_abbreviation": "SPEED",
+      "bit_range": "7:6",
+      "value": "00b, 01b, 10b, or 11b"
+    },
+    "relevant_sentence": "These bits may represent the speed configuration of the MAC only, if the MAC speed setting has been forced via software (CTRL.SPEED).",
+    "dependency_category": "software",
+    "linear_type_enforceable": false,
+    "explanation": "This dependency is about STATUS.SPEED reflecting the value of CTRL.SPEED when forced, which is a state mirroring relationship, not an ordering or sequencing of operations. Linear types cannot enforce such value reflection or parallel state relationships; they are only suitable for enforcing the order of actions.",
+    "notes": "explanation not clear, SPEED represents that auto-configured speed as well as forced speed."
+  },
+  {
+    "dependee_register": {
+      "register_name": "PBA",
+      "subfield_name_abbreviation": "PBA (RXA and TXA)",
+      "bit_range": "4:0, 20:16",
+      "value": "N/A"
+    },
+    "dependent_register": {
+      "register_name": "CTRL",
+      "subfield_name_abbreviation": "SWRST",
+      "bit_range": "26",
+      "value": "1"
+    },
+    "relevant_sentence": "Programming this register does not automatically re-load or initialize internal packetbuffer RAM pointers. The software must reset both transmit and receive operation (using the global device reset CTRL.SWRST bit) after changing this register in order for it to take effect.",
+    "dependency_category": "software",
+    "linear_type_enforceable": true,
+    "explanation": "This is an ordering dependency: PBA must be programmed before issuing the device reset via CTRL.SWRST for the changes to take effect. Linear types can enforce this by requiring the output of the PBA write as an input to the reset function, ensuring the correct sequence.",
+    "code": "write PBS <rxa 4:0, txa 20:16> depends write PBA <rxa 4:0, txa 20:16>",
+    "notes": "PBA and PBA must be coordinated"
+  },
+  {
+    "dependee_register": {
+      "register_name": "CTRL",
+      "subfield_name_abbreviation": "SWRST",
+      "bit_range": "26",
+      "value": "1"
+    },
+    "dependent_register": {
+      "register_name": "PBS",
+      "subfield_name_abbreviation": "PBS",
+      "bit_range": "4:0, 20:16",
+      "value": "N/A"
+    },
+    "relevant_sentence": "Programming this register does not automatically re-load or initialize internal packetbuffer RAM pointers. The software must reset both transmit and receive operation (using the global device reset CTRL.SWRST bit) after changing this register in order for it to take effect.",
+    "dependency_category": "software",
+    "linear_type_enforceable": true,
+    "classification_explanation": "The dependency is on ordering: after writing PBS, software must set CTRL.SWRST for changes to take effect. This can be encoded with linear types by making the function for writing PBS return a token that is consumed as an argument to a reset function, ensuring PBS is programmed before resetting.",
+    "notes":"should be PBA -> PBS -> sw reset",
+    "code": "write CTRL <SWRST 26 1> depends write PBS <rxa 4:0, txa 20:16>"
+  },
+  {
+    "dependee_register": {
+      "register_name": "CTRL",
+      "subfield_name_abbreviation": "SWRST",
+      "bit_range": "26",
+      "value": "1"
+    },
+    "dependent_register": {
+      "register_name": "RDH",
+      "subfield_name_abbreviation": "RDH",
+      "bit_range": "15:0",
+      "value": "N/A"
+    },
+    "relevant_sentence": "The only time that software should write to this register is after a reset (hardware reset or CTRL.SWRST) and before enabling the receive function (RCTL.EN).",
+    "dependency_category": "software",
+    "linear_type_enforceable": true,
+    "explanation": "The dependency enforces an order: RDH should only be written to after a reset and before enabling reception. This can be modeled by producing a type (e.g., AfterReset) only by performing the reset, which is then consumed by the RDH write function and produces another type (e.g., BeforeRctlEnabled), preventing RDH writes unless in the valid state between reset and enabling receive.",
+    "code": "RCTL <EN 1 1> depends write RDH <NA 15:0> depends write CTRL <SWRST 26 1>"
+   },
+  {
+    "dependee_register": {
+      "register_name": "RXDCTL",
+      "subfield_name_abbreviation": "PTHRESH",
+      "bit_range": "5:0",
+      "value": "non-zero"
+    },
+    "dependent_register": {
+      "register_name": "RXDCTL",
+      "subfield_name_abbreviation": "HTHRESH",
+      "bit_range": "13:8",
+      "value": "non-zero"
+    },
+    "relevant_sentence": "HTHRESH should be given a non zero value when ever PTHRESH is used.",
+    "dependency_category": "software",
+    "linear_type_enforceable": false,
+    "explanation": "This is not an ordering dependency but rather a co-configuration requirement: both PTHRESH and HTHRESH should be set together to proper non-zero values if PTHRESH is used. Linear types enforce ordering of actions, not simultaneous constraints, so they cannot directly encode that both fields must be set non-zero together."
+  },
+  {
+    "dependee_register": {
+      "register_name": "TIPG",
+      "subfield_name_abbreviation": "IPGT",
+      "bit_range": "9:0",
+      "value": "N/A"
+    },
+    "dependent_register": {
+      "register_name": "TIPG",
+      "subfield_name_abbreviation": "IPGR2",
+      "bit_range": "29:20",
+      "value": "N/A"
+    },
+    "relevant_sentence": "Note the IPGR should never be set to a value greater than IPGT. If IPGR is set to a value equal to or larger than IPGT, it will override the IPGT IPG setting in half duplex, resulting in inter packet gaps that are larger than intended by IPGT in that case.",
+    "dependency_category": "software",
+    "linear_type_enforceable": false,
+    "linear_type_explanation": "This dependency is a value constraint (IPGR must not be set greater than IPGT), not an ordering or sequencing dependency; linear types enforce call order but cannot guarantee that the value relationship between two fields in a single register is correct."
+  },
+  {
+    "dependee_register": {
+      "register_name": "CTRL",
+      "subfield_name_abbreviation": "SWRST",
+      "bit_range": "26",
+      "value": "1"
+    },
+    "dependent_register": {
+      "register_name": "TDH",
+      "subfield_name_abbreviation": "TDH",
+      "bit_range": "15:0",
+      "value": "N/A"
+    },
+    "relevant_sentence": "The only time that software should write to this register is after a reset (hardware reset or CTRL.SWRST) and before enabling the transmit function (TCTL.EN).",
+    "dependency_category": "software",
+    "linear_type_enforceable": true,
+    "explanation": "The dependency expresses that software should write to TDH only after a reset has occurred, and before enabling transmission with TCTL.EN. This can be enforced with linear types by requiring that a reset returns a token (such as ResetDone), which is then consumed by the TDH write function, ensuring ordering in the API.",
+    "code": "write TCTL <EN 1 1> depends write TDH <NA 15:0> depends write CTRL <SWRST 26 1>"
+  }
+] 

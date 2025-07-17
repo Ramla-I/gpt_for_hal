@@ -1,0 +1,5 @@
+write PBA <rxa 4:0, txa 20:16> depends write PBS <rxa 4:0, txa 20:16>
+write PBS <rxa 4:0, txa 20:16> depends write CTRL <SWRST 26 1>
+write CTRL <SWRST 26 1> depends <write RDH <NA 15:0>, write TDH <NA 15:0>>
+write RDH <NA 15:0> depends write RCTL <EN 1 1>
+write TDH <NA 15:0> depends write TCTL <EN 1 1>

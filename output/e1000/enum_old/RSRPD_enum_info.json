@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"RSRPD","subfields":[{"bit_range":"11:0","subfield_name_abbreviation":"SIZE","valid_values":[{"name":"0x0","value":"0x0 (no interrupt)"},{"name":"non-zero","value":"Interrupt asserted for small packets detected"}]}]}

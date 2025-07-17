@@ -1,0 +1,1 @@
+{"register_name_abbreviation":"RDH","subfields":[{"bit_range":"15:0","subfield_name_abbreviation":"Receive Descriptor Head","valid_values":[{"name":"Value","value":"0"}]}]}
